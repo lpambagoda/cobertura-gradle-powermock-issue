@@ -9,30 +9,22 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-
 public class CalculatorTest {
-   
-    
+
     @InjectMocks
     private Calculator calculator;
-    
+
     @Mock
     private RandomNumberGenerator generator;
-    
+
     @BeforeTest
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void add() {
-        int result = calculator.add(1, 2);
-        Assert.assertEquals(result, 3);
-    }
+    public void testGenerateRandomNumber() {
 
-    @Test
-    public void generateRandomNumber() {
-        
         when(generator.randomNumber()).thenReturn(1.5);
         double result = calculator.generateRandomNumber();
         Assert.assertEquals(result, 3.0);
