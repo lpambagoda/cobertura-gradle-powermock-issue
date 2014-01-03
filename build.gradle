@@ -1,0 +1,45 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath 'net.saliman:gradle-cobertura-plugin:2.2.2'
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'cobertura'
+apply plugin: 'eclipse'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+	testCompile	'org.testng:testng:6.8.5',
+			    'org.mockito:mockito-all:1.9.5',
+                'org.powermock:powermock-api-mockito:1.5.2',
+                'org.powermock:powermock-module-testng:1.4.10'
+}
+
+test {
+    useTestNG{
+	listeners << 'org.testng.reporters.XMLReporter'
+	
+		suiteXmlBuilder().suite(name: 'all-tests-suite', parallel: 'tests') {
+			test (name : 'all-tests') {
+				packages {
+					'package' (name: 'net.saliman.gradle.cobertura.plugin.*')
+				}
+			}
+		}
+    }
+}
+
+cobertura {
+	coverageFormats = [ 'xml', 'html']
+	coverageIgnoreTrivial = true
+}
