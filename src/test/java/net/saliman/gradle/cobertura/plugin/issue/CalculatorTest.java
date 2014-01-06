@@ -34,7 +34,7 @@ public class CalculatorTest {
     public void testGenerateRandomNumber() {
 
         when(generator.randomNumber()).thenReturn(1.5);
-        double result = calculator.generateRandomNumber();
+        double result = calculator.multiplyByRandomNumber(2);
         Assert.assertEquals(result, 3.0);
     }
 }
