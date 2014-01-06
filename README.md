@@ -21,7 +21,7 @@ There are two identical Calculator.java implementations under following packages
         	return Math.random();
     	}
 
-We have to use powermock in order to mock the final method. When we do this everything works fine. Tests are successfully passing. ** But Cobertura test coverage report does not show the coverage for the test with powermock**. 
+We have to use powermock in order to mock the final method. When we do this everything works fine. Tests are successfully passing. **But Cobertura test coverage report does not show the coverage for the test with powermock**. 
 
 
 	Coverage report is available under
