@@ -20,9 +20,9 @@ repositories {
 dependencies {
 
 	testCompile	'org.testng:testng:6.8.5',
-			    'org.mockito:mockito-all:1.9.5',
-                'org.powermock:powermock-api-mockito:1.5.2',
-                'org.powermock:powermock-module-testng:1.4.10'
+			    'org.mockito:mockito-all:1.10.19',
+                'org.powermock:powermock-api-mockito:1.6.2',
+                'org.powermock:powermock-module-testng:1.6.2'
 }
 
 test {

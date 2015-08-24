@@ -7,4 +7,8 @@ public class Calculator {
     public double multiplyByRandomNumber(int number) {
         return number * randomGenerator.randomNumber();
     }
+
+    protected void setRandomGenerator(RandomNumberGenerator randomGenerator) {
+        this.randomGenerator = randomGenerator;
+    }
 }
